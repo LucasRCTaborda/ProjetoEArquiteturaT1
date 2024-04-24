@@ -1,4 +1,4 @@
-package dominio.servicos.persistencia;
+package dominio.persistencia;
 
 import dominio.modelos.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;

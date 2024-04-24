@@ -1,2 +1,14 @@
-package dominio.servicos;public record AplicativoService() {
+package dominio.servicos;
+
+import dominio.modelos.Aplicativo;
+import dominio.persistencia.IAplicativoRepository;
+import org.springframework.stereotype.Service;
+
+@Service
+public record AplicativoService(IAplicativoRepository iAplicativoRepository) {
+
+    public Aplicativo salvar(Aplicativo aplicativo){
+        return iAplicativoRepository.save(aplicativo);
+
+    }
 }
