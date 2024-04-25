@@ -12,9 +12,9 @@ public class Cliente {
     @Id
     @GeneratedValue
     private long codigo;
-
     private String nome;
     private String Email;
+
     public Cliente() {
     }
 
