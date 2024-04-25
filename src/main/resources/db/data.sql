@@ -1,30 +1,30 @@
 
-INSERT INTO Aplicativo (id,nome,custoMensal) VALUES ('Icloud',15);
-INSERT INTO Aplicativo (id,nome,custoMensal) VALUES ('Netflix',45);
-INSERT INTO Aplicativo (id,nome,custoMensal) VALUES ('AcademiaLucão',120);
-INSERT INTO Aplicativo (id,nome,custoMensal) VALUES ('BarbarosBarbershop',150);
-INSERT INTO Aplicativo (id,nome,custoMensal) VALUES ('ifoodTeleFree',7.99);
+INSERT INTO Aplicativos (id,nome,custoMensal) VALUES ('Icloud',15);
+INSERT INTO Aplicativos (id,nome,custoMensal) VALUES ('Netflix',45);
+INSERT INTO Aplicativos (id,nome,custoMensal) VALUES ('AcademiaLucão',120);
+INSERT INTO Aplicativos (id,nome,custoMensal) VALUES ('BarbarosBarbershop',150);
+INSERT INTO Aplicativos (id,nome,custoMensal) VALUES ('ifoodTeleFree',7.99);
 
 
 
-INSERT INTO Usuario (nome,senha) VALUES ('Joao,1234');
-INSERT INTO Usuario (nome,senha) VALUES ('Felipe,1234');
-INSERT INTO Usuario (nome,senha) VALUES  ('John,1234');
-INSERT INTO Usuario (nome,senha) VALUES  ('Noah,1234');
-INSERT INTO Usuario (nome,senha) VALUES ('Patati,1234');
+INSERT INTO Usuarios (nome,senha) VALUES ('Joao,1234');
+INSERT INTO Usuarios (nome,senha) VALUES ('Felipe,1234');
+INSERT INTO Usuarios (nome,senha) VALUES  ('John,1234');
+INSERT INTO Usuarios (nome,senha) VALUES  ('Noah,1234');
+INSERT INTO Usuarios (nome,senha) VALUES ('Patati,1234');
 
 
 
-INSERT INTO Cliente (codigo,nome,email) VALUES (10,'Joao','@joao');
-INSERT INTO Cliente (codigo,nome,email) VALUES (11,'Felipe','@Felipe');
-INSERT INTO Cliente (codigo,nome,email) VALUES (12,'John','@John');
-INSERT INTO Cliente (codigo,nome,email) VALUES (13,'Noah','@Noah');
-INSERT INTO Cliente (codigo,nome,email) VALUES (14,'Patati','@Patati');
+INSERT INTO Clientes (codigo,nome,email) VALUES (10,'Joao','@joao');
+INSERT INTO Clientes (codigo,nome,email) VALUES (11,'Felipe','@Felipe');
+INSERT INTO Clientes (codigo,nome,email) VALUES (12,'John','@John');
+INSERT INTO Clientes (codigo,nome,email) VALUES (13,'Noah','@Noah');
+INSERT INTO Clientes (codigo,nome,email) VALUES (14,'Patati','@Patati');
 
 
 
 
-INSERT INTO Assinatura (codigo, aplicativo, cliente, inicioVigencia, fimVigencia)
+INSERT INTO Assinaturas (codigo, aplicativo, cliente, inicioVigencia, fimVigencia)
 VALUES
     (1, 'App1', 'Cliente1', '2024-04-25', '2024-04-30'),
     (2, 'App2', 'Cliente2', '2024-04-26', '2024-05-01'),
@@ -34,7 +34,7 @@ VALUES
 
 
 
-INSERT INTO Pagamento (codigo, assinatura, valorPago, promocao)
+INSERT INTO Pagamentos (codigo, assinatura, valorPago, promocao)
 VALUES
     (1, 1, 50.00, 'Promoção A'),
     (2, 2, 45.00, 'Promoção B'),

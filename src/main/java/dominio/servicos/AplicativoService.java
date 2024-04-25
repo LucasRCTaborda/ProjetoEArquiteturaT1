@@ -11,4 +11,5 @@ public record AplicativoService(IAplicativoRepository iAplicativoRepository) {
         return iAplicativoRepository.save(aplicativo);
 
     }
+
 }
