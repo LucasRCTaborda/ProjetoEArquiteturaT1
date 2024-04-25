@@ -1,6 +1,5 @@
 package interfaceAdaptadora;
 
-import dominio.modelos.Aplicativo;
 import dominio.modelos.Pagamento;
 import dominio.servicos.PagamentoService;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/pagamento")
 public record PagamentoController(PagamentoService pagamentoService) {
     @PostMapping
-    public Pagamento salvar(@RequestBody Pagamento pagamento){
+    public Pagamento salvar(@RequestBody Pagamento pagamento) {
         return pagamentoService.save(pagamento);
     }
 }
