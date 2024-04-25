@@ -13,7 +13,7 @@ public class AssinaturaService {
         this.assinaturaRepository = assinaturaRepository;
     }
 
-    public Assinatura salvar(Assinatura assinatura) {
+    public Assinatura save(Assinatura assinatura) {
         return assinaturaRepository.save(assinatura);
     }
 

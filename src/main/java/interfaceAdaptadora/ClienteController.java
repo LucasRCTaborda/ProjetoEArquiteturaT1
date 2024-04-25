@@ -1,8 +1,8 @@
 package interfaceAdaptadora;
 
-
 import dominio.modelos.Aplicativo;
-import dominio.servicos.AplicativoService;
+import dominio.modelos.Cliente;
+import dominio.servicos.ClienteService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,10 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/Aplicativo")
-public record controllerAplicativo(AplicativoService aplicativoService) {
-
+public record ClienteController(ClienteService clienteService) {
     @PostMapping
-    public Aplicativo salvar(@RequestBody Aplicativo aplicativo){
-       return aplicativoService.salvar(aplicativo);
+    public Cliente save(@RequestBody Cliente cliente){
+        return clienteService.save(cliente);
     }
 }
