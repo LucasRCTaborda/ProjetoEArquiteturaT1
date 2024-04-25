@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/Aplicativo")
+@RequestMapping("/pagamento")
 public record PagamentoController(PagamentoService pagamentoService) {
     @PostMapping
     public Pagamento salvar(@RequestBody Pagamento pagamento){

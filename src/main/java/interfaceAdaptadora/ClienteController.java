@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/Aplicativo")
+@RequestMapping("/cliente")
 public record ClienteController(ClienteService clienteService) {
     @PostMapping
     public Cliente save(@RequestBody Cliente cliente){

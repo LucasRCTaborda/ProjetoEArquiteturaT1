@@ -11,15 +11,21 @@ public class Cliente {
 
     @Id
     @GeneratedValue
-    private long Id;
+    private long codigo;
 
     private String nome;
     private String Email;
     public Cliente() {
     }
 
-    public long getId() {
-        return Id;
+    public Cliente(long codigo, String nome, String email) {
+        this.codigo = codigo;
+        this.nome = nome;
+        Email = email;
+    }
+
+    public long getcodigo() {
+        return codigo;
     }
 
     public String getNome() {

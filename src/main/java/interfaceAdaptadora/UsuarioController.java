@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/Aplicativo")
+@RequestMapping("/usuario")
 public record UsuarioController(UsuarioService usuarioService) {
     @PostMapping
     public Usuario save(@RequestBody Usuario usuario){
