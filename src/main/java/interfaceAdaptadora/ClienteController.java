@@ -1,6 +1,5 @@
 package interfaceAdaptadora;
 
-import dominio.modelos.Aplicativo;
 import dominio.modelos.Cliente;
 import dominio.servicos.ClienteService;
 import org.springframework.web.bind.annotation.PostMapping;
