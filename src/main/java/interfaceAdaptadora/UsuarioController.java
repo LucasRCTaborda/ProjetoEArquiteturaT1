@@ -2,6 +2,7 @@ package interfaceAdaptadora;
 
 import dominio.modelos.Usuario;
 import dominio.servicos.UsuarioService;
+import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,17 +22,19 @@ public class UsuarioController {
         this.usuarioService = usuarioService;
     }
 
-    @PostMapping("/cadastrar")
-    public ResponseEntity<Usuario> cadastrarUsuario(@RequestBody Usuario usuario) {
-        Usuario novoUsuario = usuarioService.cadastrarUsuario(usuario);
+    @PostMapping("/cadastrar/{usuario}/{senha}")
+    public ResponseEntity<Usuario> cadastrarUsuario(@RequestBody String usuario, @PathVariable String senha) {
+        Usuario novoUsuario = new Usuario(usuario, senha);
+        usuarioService.cadastrarUsuario(novoUsuario);
         return ResponseEntity.status(HttpStatus.CREATED).body(novoUsuario);
     }
 
-    @PutMapping("/editar/{id}")
-    public ResponseEntity<Usuario> editarUsuario(@PathVariable Long id, @RequestBody Usuario usuarioAtualizado) {
-        Usuario usuarioEditado = usuarioService.editarUsuario(id, usuarioAtualizado);
-        if (usuarioEditado != null) {
-            return ResponseEntity.ok(usuarioEditado);
+    @PutMapping("/editar/{id}/{usuario}/{senha}\"")
+    public ResponseEntity<Usuario> editarUsuario(@PathVariable Long id,@RequestBody String usuario, @PathVariable String senha) {
+        Usuario usuarioAtualizado = new Usuario(usuario, senha);
+       usuarioService.editarUsuario(id, usuarioAtualizado);
+        if (usuarioAtualizado != null) {
+            return ResponseEntity.ok(usuarioAtualizado);
         } else {
             return ResponseEntity.notFound().build();
         }

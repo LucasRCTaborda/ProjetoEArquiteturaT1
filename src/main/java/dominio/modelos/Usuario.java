@@ -1,6 +1,14 @@
 package dominio.modelos;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
 public class Usuario {
+
+
+    @Id
+    @GeneratedValue
+    private Long codigo;
     private String usuario;
     private String senha;
 
@@ -12,7 +20,9 @@ public class Usuario {
     public Usuario() {
     }
 
-
+    public Long getCodigo() {
+        return codigo;
+    }
     public String getUsuario() {
         return usuario;
     }
