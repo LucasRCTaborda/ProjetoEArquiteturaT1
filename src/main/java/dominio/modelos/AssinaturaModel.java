@@ -15,11 +15,21 @@ public class AssinaturaModel {
     @Id
     @GeneratedValue
     private long codigo;
-    private List<AplicativoModel> aplicativo;
-    private List<ClienteModel> cliente;
 
     private Date inicioVigencia;
     private Date fimVigencia;
+    private List<ClienteModel> cliente;
+    private List<AplicativoModel> aplicativo;
+
+
+
+    public List<ClienteModel> getCliente() {
+        return cliente;
+    }
+    public List<AplicativoModel> getAplicativo() {
+        return aplicativo;
+    }
+
 
     public AssinaturaModel(long codigo) {
         this.codigo = codigo;

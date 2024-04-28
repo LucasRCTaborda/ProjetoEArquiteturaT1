@@ -26,11 +26,11 @@ INSERT INTO Clientes (codigo,nome,email) VALUES (14,'Patati','@Patati');
 
 INSERT INTO Assinaturas (codigo, aplicativo, cliente, inicioVigencia, fimVigencia)
 VALUES
-    (1, 'App1', 'Cliente1', '2024-04-25', '2024-04-30'),
-    (2, 'App2', 'Cliente2', '2024-04-26', '2024-05-01'),
-    (3, 'App3', 'Cliente3', '2024-04-27', '2024-05-02'),
-    (4, 'App4', 'Cliente4', '2024-04-28', '2024-05-03'),
-    (5, 'App5', 'Cliente5', '2024-04-29', '2024-05-04');
+    (1, 'App1', '1', '2024-04-25', '2024-04-30'),
+    (2, 'App2', '1', '2024-04-26', '2024-05-01'),
+    (3, 'App3', '1', '2024-04-27', '2024-05-02'),
+    (4, 'App4', '1', '2024-04-28', '2024-05-03'),
+    (5, 'App5', '1', '2024-04-29', '2024-05-04');
 
 
 
