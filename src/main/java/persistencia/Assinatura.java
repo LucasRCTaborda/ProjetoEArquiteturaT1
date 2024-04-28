@@ -1,4 +1,4 @@
-package dominio.modelos;
+package persistencia;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -10,8 +10,8 @@ public class Assinatura {
     @Id
     @GeneratedValue
     private long codigo;
-    private  Aplicativo aplicativo;
-    private  Cliente cliente;
+    private Aplicativo aplicativo;
+    private Cliente cliente;
     private Date inicioVigencia;
     private Date fimVigencia;
 

@@ -1,7 +1,16 @@
 package dominio.persistencia;
 
-import dominio.modelos.Assinatura;
-import org.springframework.data.jpa.repository.JpaRepository;
+import dominio.modelos.AplicativoModel;
+import dominio.modelos.AssinaturaModel;
+import dominio.modelos.ClienteModel;
 
-public interface IAssinaturaRepository extends JpaRepository<Assinatura, Long> {
+import java.util.List;
+
+public interface IAssinaturaRepository  {
+    List<AssinaturaModel> todos ();
+    List<AplicativoModel> todosAplicativos();
+    List<ClienteModel> todosClientes();
+    AssinaturaModel consultaPorId(Long codigo);
+
+    AssinaturaModel ConsultaporIdAssinatura(long codigo);
 }

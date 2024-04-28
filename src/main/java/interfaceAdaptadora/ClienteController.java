@@ -1,18 +1,32 @@
 package interfaceAdaptadora;
 
-import dominio.modelos.Cliente;
 import dominio.servicos.ClienteService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/cliente")
 public record ClienteController(ClienteService clienteService) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
 
     @Autowired
     public ClienteController(ClienteService clienteService) {
@@ -56,5 +70,5 @@ public record ClienteController(ClienteService clienteService) {
         } else {
             return ResponseEntity.notFound().build();
         }
-    }
+    }*/
 }

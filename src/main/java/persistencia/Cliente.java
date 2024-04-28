@@ -1,4 +1,4 @@
-package dominio.modelos;
+package persistencia;
 
 
 import jakarta.persistence.Entity;

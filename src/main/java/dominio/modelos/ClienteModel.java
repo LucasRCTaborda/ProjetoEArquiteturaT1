@@ -1,25 +1,30 @@
 package dominio.modelos;
 
+
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
-public class Aplicativo {
+@Entity
+public class ClienteModel {
+
+
     @Id
     @GeneratedValue
     private long codigo;
     private String nome;
-    private double custoMensal;
+    private String Email;
 
-    public Aplicativo() {
+    public ClienteModel() {
     }
 
-    public Aplicativo(long codigo, String nome, double custoMensal) {
+    public ClienteModel(long codigo, String nome, String email) {
         this.codigo = codigo;
         this.nome = nome;
-        this.custoMensal = custoMensal;
+        Email = email;
     }
 
-    public long getCodigo() {
+    public long getcodigo() {
         return codigo;
     }
 
@@ -31,11 +36,11 @@ public class Aplicativo {
         this.nome = nome;
     }
 
-    public double getCustoMensal() {
-        return custoMensal;
+    public String getEmail() {
+        return Email;
     }
 
-    public void setCustoMensal(double custoMensal) {
-        this.custoMensal = custoMensal;
+    public void setEmail(String email) {
+        Email = email;
     }
 }

@@ -1,18 +1,32 @@
 package interfaceAdaptadora;
 
-import dominio.modelos.Pagamento;
 import dominio.servicos.PagamentoService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/pagamento")
 public record PagamentoController(PagamentoService pagamentoService) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
 
     @Autowired
     public PagamentoController(PagamentoService pagamentoService) {
@@ -55,5 +69,5 @@ public record PagamentoController(PagamentoService pagamentoService) {
             return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.notFound().build();
-        }}
+        }}*/
 }

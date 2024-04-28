@@ -1,16 +1,55 @@
 package dominio.servicos;
 
-import dominio.modelos.Usuario;
 import dominio.persistencia.IUsuarioRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public record UsuarioService(IUsuarioRepository iUsuarioRepository) {
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
     public Usuario save(Usuario usuario) {
         return iUsuarioRepository.save(usuario);
@@ -44,5 +83,5 @@ public record UsuarioService(IUsuarioRepository iUsuarioRepository) {
             // Lógica de tratamento de erro se o usuário não for encontrado
             return null;
         }
-    }
+    }*/
 }

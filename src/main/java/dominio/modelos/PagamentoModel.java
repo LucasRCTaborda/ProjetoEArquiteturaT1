@@ -1,26 +1,28 @@
 package dominio.modelos;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+@Entity
 
-public class Pagamento {
+public class PagamentoModel {
 
 
     @Id
     @GeneratedValue
     private long codigo;
-    private Assinatura assinatura;
+    private AssinaturaModel assinatura;
     private double valorPago;
     private String promocao;
 
-    public Pagamento(long codigo, Assinatura assinatura, double valorPago, String promocao) {
+    public PagamentoModel(long codigo, AssinaturaModel assinatura, double valorPago, String promocao) {
         this.codigo = codigo;
         this.assinatura = assinatura;
         this.valorPago = valorPago;
         this.promocao = promocao;
     }
 
-    public Pagamento() {
+    public PagamentoModel() {
     }
 
     public long getCodigo() {
@@ -28,11 +30,11 @@ public class Pagamento {
     }
 
 
-    public Assinatura getAssinatura() {
+    public AssinaturaModel getAssinatura() {
         return assinatura;
     }
 
-    public void setAssinatura(Assinatura assinatura) {
+    public void setAssinatura(AssinaturaModel assinatura) {
         this.assinatura = assinatura;
     }
 

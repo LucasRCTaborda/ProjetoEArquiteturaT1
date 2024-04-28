@@ -1,7 +1,15 @@
 package dominio.persistencia;
 
-import dominio.modelos.Pagamento;
-import org.springframework.data.jpa.repository.JpaRepository;
+import dominio.modelos.AssinaturaModel;
+import dominio.modelos.PagamentoModel;
 
-public interface IPagamentoRepository extends JpaRepository <Pagamento, Long>{
+import java.util.List;
+
+public interface IPagamentoRepository {
+    List<PagamentoModel> todos ();
+    PagamentoModel consultaPorId(Long codigo);
+
+    List<AssinaturaModel> todosAssinatura ();
+    AssinaturaModel consultaPorIdAssinatura(Long codigo);
+
 }

@@ -1,15 +1,44 @@
 package dominio.servicos;
 
-import java.util.List;
-import java.util.Optional;
-
-import dominio.modelos.Cliente;
-import dominio.persistencia.IClienteRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ClienteService {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     private final IClienteRepository iClienteRepository;
 
     public ClienteService(IClienteRepository iClienteRepository) {
@@ -47,5 +76,5 @@ public class ClienteService {
             // Lógica de tratamento de erro se o cliente não for encontrado
             return null;
         }
-    }
+    }*/
 }

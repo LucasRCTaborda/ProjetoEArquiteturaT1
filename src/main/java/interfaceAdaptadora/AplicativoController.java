@@ -1,21 +1,51 @@
 package interfaceAdaptadora;
 
 
-import dominio.modelos.Aplicativo;
-import dominio.servicos.AplicativoService;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import dominio.servicos.AtualizaCusto;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/aplicativo")
-public record AplicativoController(AplicativoService aplicativoService) {
+public record AplicativoController(AtualizaCusto aplicativoService) {
 
 
-    public AplicativoController(AplicativoService aplicativoService) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*  public AplicativoController(AtualizaCusto aplicativoService) {
         this.aplicativoService = aplicativoService;
     }
 
@@ -63,6 +93,6 @@ public record AplicativoController(AplicativoService aplicativoService) {
         } else {
             return ResponseEntity.notFound().build();
         }
-    }
+    }*/
 
     }

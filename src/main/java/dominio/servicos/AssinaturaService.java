@@ -1,15 +1,49 @@
 package dominio.servicos;
 
-import java.util.List;
-import java.util.Optional;
-
-import dominio.modelos.Assinatura;
-import dominio.persistencia.IAssinaturaRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AssinaturaService {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     private final IAssinaturaRepository assinaturaRepository;
 
     public AssinaturaService(IAssinaturaRepository assinaturaRepository) {
@@ -47,5 +81,5 @@ public class AssinaturaService {
             // Lógica de tratamento de erro se a assinatura não for encontrada
             return null;
         }
-    }
+    }*/
 }

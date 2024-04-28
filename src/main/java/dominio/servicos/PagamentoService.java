@@ -1,15 +1,48 @@
 package dominio.servicos;
 
-import java.util.List;
-import java.util.Optional;
-
-import dominio.modelos.Pagamento;
-import dominio.persistencia.IPagamentoRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PagamentoService {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     private final IPagamentoRepository iPagamentoRepository;
 
     public PagamentoService(IPagamentoRepository iPagamentoRepository) {
@@ -47,5 +80,5 @@ public class PagamentoService {
             // Lógica de tratamento de erro se o pagamento não for encontrado
             return null;
         }
-    }
+    }*/
 }

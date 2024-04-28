@@ -1,8 +1,13 @@
 package dominio.persistencia;
 
 
-import dominio.modelos.Aplicativo;
-import org.springframework.data.jpa.repository.JpaRepository;
+import dominio.modelos.AplicativoModel;
 
-public interface IAplicativoRepository extends JpaRepository< Aplicativo,Long> {
+import java.util.List;
+
+public interface IAplicativoRepository {
+List<AplicativoModel> todos ();
+AplicativoModel consultaPorId(Long codigo);
+
+
 }

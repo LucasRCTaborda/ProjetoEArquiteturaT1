@@ -1,23 +1,20 @@
 package dominio.modelos;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
-public class Usuario {
-
-
-    @Id
-    @GeneratedValue
+public class UsuarioModel {
     private Long codigo;
     private String usuario;
     private String senha;
 
-    public Usuario(String usuario, String senha) {
+    public UsuarioModel(String usuario, String senha) {
         this.usuario = usuario;
         this.senha = senha;
     }
 
-    public Usuario() {
+    public UsuarioModel() {
     }
 
     public Long getCodigo() {
@@ -37,5 +34,14 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    @Override
+    public String toString() {
+        return "UsuarioModel{" +
+                "codigo=" + codigo +
+                ", usuario='" + usuario + '\'' +
+                ", senha='" + senha + '\'' +
+                '}';
     }
 }

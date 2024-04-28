@@ -1,7 +1,10 @@
 package dominio.persistencia;
 
-import dominio.modelos.Usuario;
-import org.springframework.data.jpa.repository.JpaRepository;
+import dominio.modelos.UsuarioModel;
 
-public interface IUsuarioRepository  extends JpaRepository<Usuario, Long> {
+import java.util.List;
+
+public interface IUsuarioRepository  {
+    List<UsuarioModel> todos ();
+    UsuarioModel consultaPorId(Long codigo);
 }

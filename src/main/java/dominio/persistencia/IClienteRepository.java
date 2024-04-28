@@ -1,7 +1,10 @@
 package dominio.persistencia;
 
-import dominio.modelos.Cliente;
-import org.springframework.data.jpa.repository.JpaRepository;
+import dominio.modelos.ClienteModel;
 
-public interface IClienteRepository extends JpaRepository<Cliente, Long> {
+import java.util.List;
+
+public interface IClienteRepository  {
+    List<ClienteModel> todos ();
+    ClienteModel consultaPorId(Long codigo);
 }
