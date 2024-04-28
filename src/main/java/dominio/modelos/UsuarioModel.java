@@ -17,6 +17,9 @@ public class UsuarioModel {
     public UsuarioModel() {
     }
 
+    public UsuarioModel(Long codigo, String usuario, String senha) {
+    }
+
     public Long getCodigo() {
         return codigo;
     }
