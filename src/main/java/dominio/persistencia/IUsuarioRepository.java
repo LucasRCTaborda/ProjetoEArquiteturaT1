@@ -5,5 +5,6 @@ import dominio.modelos.UsuarioModel;
 import java.util.List;
 
 public interface IUsuarioRepository  {
-    List<UsuarioModel> todos ();
+    List<UsuarioModel> todos();
+    UsuarioModel consultaPorId(long codigo);
 }

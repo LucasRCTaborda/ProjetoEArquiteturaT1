@@ -9,28 +9,18 @@ import java.util.Optional;
 
 @Entity
 public class Usuario {
-
-
     @Id
     @GeneratedValue
     private Long codigo;
     private String usuario;
     private String senha;
-
-    public Usuario(String usuario, String senha) {
+    public Usuario() {
+    }
+    public Usuario(long id,String usuario, String senha) {
+        this.codigo=id;
         this.usuario = usuario;
         this.senha = senha;
     }
-
-    public Usuario() {
-    }
-
-    public Usuario(Long codigo, String usuario, String senha) {
-    }
-
-
-
-
     public Long getCodigo() {
         return codigo;
     }
@@ -51,11 +41,11 @@ public class Usuario {
     }
 
 
-    public static Usuario fromUsuarioModel(UsuarioModel pModel){
-        return new Usuario(pModel.getCodigo(),pModel.getUsuario(),pModel.getSenha());
+    public static Usuario fromUsuarioModel(UsuarioModel uModel){
+        return new Usuario(uModel.getCodigo(),uModel.getUsuario(),uModel.getSenha());
     }
 
-    public static UsuarioModel toUsuarioModel(Usuario prod){
-        return new UsuarioModel(prod.getCodigo(),prod.getUsuario(),prod.getSenha());
+    public static UsuarioModel toUsuarioModel(Usuario usua){
+        return new UsuarioModel(usua.getCodigo(),usua.getUsuario(),usua.getSenha());
     }
 }

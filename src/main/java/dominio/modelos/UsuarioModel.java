@@ -5,30 +5,22 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 public class UsuarioModel {
-    private Long codigo;
+    private long codigo;
     private String usuario;
     private String senha;
 
-    public UsuarioModel(String usuario, String senha) {
+    public UsuarioModel(long id,String usuario, String senha) {
+        this.codigo=id;
         this.usuario = usuario;
         this.senha = senha;
     }
 
-    public UsuarioModel() {
-    }
-
-    public UsuarioModel(Long codigo, String usuario, String senha) {
-    }
-
-    public Long getCodigo() {
+    public long getCodigo() {
         return codigo;
     }
+
     public String getUsuario() {
         return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
     }
 
     public String getSenha() {
