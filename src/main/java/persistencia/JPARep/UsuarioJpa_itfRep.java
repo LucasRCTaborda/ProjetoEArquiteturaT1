@@ -1,6 +1,7 @@
-package persistencia;
+package persistencia.JPARep;
 
 import org.springframework.data.repository.CrudRepository;
+import persistencia.Entity.Usuario;
 
 import java.util.List;
 

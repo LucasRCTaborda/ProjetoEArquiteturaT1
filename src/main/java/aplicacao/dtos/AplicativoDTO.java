@@ -1,11 +1,10 @@
 package aplicacao.dtos;
 
 import dominio.modelos.AplicativoModel;
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
-public class Aplicativo {
+public class AplicativoDTO {
     @Id
     @GeneratedValue
     private long codigo;
@@ -14,7 +13,7 @@ public class Aplicativo {
 
 
 
-    public Aplicativo(long codigo, String nome, double custoMensal) {
+    public AplicativoDTO(long codigo, String nome, double custoMensal) {
         this.codigo = codigo;
         this.nome = nome;
         this.custoMensal = custoMensal;
@@ -39,6 +38,8 @@ public class Aplicativo {
     public double getCustoMensal() {
         return custoMensal;
     }
+    public static AplicativoDTO fromModel(AplicativoModel aplicativo){
+        return new AplicativoDTO(aplicativo.getCodigo(), aplicativo.getNome(), aplicativo.getCustoMensal());
+    }
 
-  
 }

@@ -1,11 +1,9 @@
-package persistencia;
+package persistencia.Entity;
 
 import dominio.modelos.UsuarioModel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-
-import java.util.Optional;
 
 @Entity
 public class Usuario {

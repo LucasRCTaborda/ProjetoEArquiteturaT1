@@ -1,12 +1,13 @@
-package persistencia.Entity;
+package aplicacao.dtos;
 
 
-import jakarta.persistence.Entity;
+
+import dominio.modelos.ClienteModel;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
-@Entity
-public class Cliente {
+
+public class ClienteDTO {
 
 
     @Id
@@ -15,16 +16,15 @@ public class Cliente {
     private String nome;
     private String Email;
 
-    public Cliente() {
-    }
 
-    public Cliente(long codigo, String nome, String email) {
+
+    public ClienteDTO(long codigo, String nome, String email) {
         this.codigo = codigo;
         this.nome = nome;
         Email = email;
     }
 
-    public long getcodigo() {
+    public long getCodigo() {
         return codigo;
     }
 
@@ -32,15 +32,28 @@ public class Cliente {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getEmail() {
         return Email;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
+
     public void setEmail(String email) {
         Email = email;
+    }
+    @Override
+    public String toString() {
+        return "ClienteDTO{" +
+                "codigo=" + codigo +
+                ", nome='" + nome + '\'' +
+                ", Email='" + Email + '\'' +
+                '}';
+    }
+    public static ClienteDTO fromModel(ClienteModel cliente){
+        return new ClienteDTO(cliente.getcodigo(), cliente.getNome(), cliente.getEmail());
     }
 }

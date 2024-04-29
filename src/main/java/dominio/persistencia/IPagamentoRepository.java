@@ -9,6 +9,7 @@ public interface IPagamentoRepository {
     List<PagamentoModel> todos ();
     PagamentoModel consultaPorId(Long codigo);
 
+
     List<AssinaturaModel> todosAssinatura ();
     AssinaturaModel consultaPorIdAssinatura(Long codigo);
 

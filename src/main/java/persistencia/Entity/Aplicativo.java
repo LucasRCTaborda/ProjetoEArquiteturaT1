@@ -1,4 +1,4 @@
-package persistencia;
+package persistencia.Entity;
 
 import dominio.modelos.AplicativoModel;
 import jakarta.persistence.Entity;
@@ -41,11 +41,11 @@ public class Aplicativo {
         this.custoMensal = custoMensal;
     }
 
-    public static Aplicativo fromProdutoModel(AplicativoModel apModel){
+    public static Aplicativo fromAplicativoModel(AplicativoModel apModel){
         return new Aplicativo(apModel.getCodigo(),apModel.getNome(),apModel.getCustoMensal());
     }
 
-    public static AplicativoModel toProdutoModel(Aplicativo aplicativo){
+    public static AplicativoModel toAplicativoModel(Aplicativo aplicativo){
         return new AplicativoModel(aplicativo.getCodigo(), aplicativo.getNome(), aplicativo.getCustoMensal());
     }
 }

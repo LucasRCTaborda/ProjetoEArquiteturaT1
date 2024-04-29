@@ -1,10 +1,8 @@
 package dominio.modelos;
 
-import jakarta.persistence.Entity;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-@Entity
-
 public class PagamentoModel {
 
 
@@ -20,9 +18,6 @@ public class PagamentoModel {
         this.assinatura = assinatura;
         this.valorPago = valorPago;
         this.promocao = promocao;
-    }
-
-    public PagamentoModel() {
     }
 
     public long getCodigo() {
@@ -52,5 +47,15 @@ public class PagamentoModel {
 
     public void setPromocao(String promocao) {
         this.promocao = promocao;
+    }
+
+    @Override
+    public String toString() {
+        return "PagamentoModel{" +
+                "codigo=" + codigo +
+                ", assinatura=" + assinatura +
+                ", valorPago=" + valorPago +
+                ", promocao='" + promocao + '\'' +
+                '}';
     }
 }

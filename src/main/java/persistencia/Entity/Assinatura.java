@@ -1,4 +1,4 @@
-package persistencia;
+package persistencia.Entity;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;

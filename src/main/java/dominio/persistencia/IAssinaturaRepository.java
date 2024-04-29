@@ -10,7 +10,8 @@ public interface IAssinaturaRepository  {
     List<AssinaturaModel> todos ();
     List<AplicativoModel> todosAplicativos();
     List<ClienteModel> todosClientes();
-    AssinaturaModel consultaPorId(Long codigo);
 
+
+    AssinaturaModel consultaPorId(Long codigo);
     AssinaturaModel ConsultaporIdAssinatura(long codigo);
 }

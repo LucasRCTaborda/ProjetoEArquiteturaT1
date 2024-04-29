@@ -1,6 +1,8 @@
-package persistencia;
+package persistencia.Entity;
 
 
+import dominio.modelos.ClienteModel;
+import dominio.modelos.UsuarioModel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -42,5 +44,13 @@ public class Cliente {
 
     public void setEmail(String email) {
         Email = email;
+    }
+
+    public static Cliente fromClienteModel(ClienteModel cModel){
+        return new Cliente(cModel.getcodigo(),cModel.getNome(),cModel.getEmail());
+    }
+
+    public static ClienteModel toClienteModel(Cliente cli){
+        return new ClienteModel(cli.getcodigo(),cli.getNome(),cli.getEmail());
     }
 }

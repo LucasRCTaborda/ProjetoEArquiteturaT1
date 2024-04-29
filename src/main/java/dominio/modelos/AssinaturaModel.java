@@ -2,9 +2,6 @@ package dominio.modelos;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import persistencia.Aplicativo;
-import persistencia.Assinatura;
-import persistencia.Cliente;
 
 import java.util.Date;
 import java.util.LinkedList;
@@ -64,4 +61,14 @@ public class AssinaturaModel {
         this.fimVigencia = fimVigencia;
     }
 
+    @Override
+    public String toString() {
+        return "AssinaturaModel{" +
+                "codigo=" + codigo +
+                ", inicioVigencia=" + inicioVigencia +
+                ", fimVigencia=" + fimVigencia +
+                ", cliente=" + cliente +
+                ", aplicativo=" + aplicativo +
+                '}';
+    }
 }

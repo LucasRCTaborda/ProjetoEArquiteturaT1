@@ -1,11 +1,8 @@
 package dominio.modelos;
 
-
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
-@Entity
 public class ClienteModel {
 
 
@@ -14,9 +11,6 @@ public class ClienteModel {
     private long codigo;
     private String nome;
     private String Email;
-
-    public ClienteModel() {
-    }
 
     public ClienteModel(long codigo, String nome, String email) {
         this.codigo = codigo;
@@ -42,5 +36,14 @@ public class ClienteModel {
 
     public void setEmail(String email) {
         Email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "ClienteModel{" +
+                "codigo=" + codigo +
+                ", nome='" + nome + '\'' +
+                ", Email='" + Email + '\'' +
+                '}';
     }
 }

@@ -3,7 +3,7 @@ package dominio.modelos;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-@Entity
+
 public class AplicativoModel {
     @Id
     @GeneratedValue
@@ -11,8 +11,6 @@ public class AplicativoModel {
     private String nome;
     private double custoMensal;
 
-    public AplicativoModel() {
-    }
 
     public AplicativoModel(long codigo, String nome, double custoMensal) {
         this.codigo = codigo;
