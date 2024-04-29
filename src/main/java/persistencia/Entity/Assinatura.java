@@ -1,32 +1,40 @@
 package persistencia.Entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import persistencia.Entity.Aplicativo;
+import persistencia.Entity.Cliente;
+
 
 import java.util.Date;
 
+@Entity
 public class Assinatura {
 
     @Id
     @GeneratedValue
     private long codigo;
+
+    @ManyToOne
     private Aplicativo aplicativo;
+
+    @ManyToOne
     private Cliente cliente;
+
     private Date inicioVigencia;
+
     private Date fimVigencia;
 
-    public Assinatura(long codigo, Aplicativo aplicativo, Cliente cliente, Date inicioVigencia, Date fimVigencia) {
-        this.codigo = codigo;
-        this.aplicativo = aplicativo;
-        this.cliente = cliente;
-        this.inicioVigencia = inicioVigencia;
-        this.fimVigencia = fimVigencia;
-    }
-
+    // Getters e Setters
     public long getCodigo() {
         return codigo;
     }
 
+    public void setCodigo(long codigo) {
+        this.codigo = codigo;
+    }
 
     public Aplicativo getAplicativo() {
         return aplicativo;
@@ -59,5 +67,4 @@ public class Assinatura {
     public void setFimVigencia(Date fimVigencia) {
         this.fimVigencia = fimVigencia;
     }
-
 }
