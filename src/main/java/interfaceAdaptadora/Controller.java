@@ -1,25 +1,26 @@
+package interfaceAdaptadora;
+
 import dominio.modelos.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import persistencia.*;
 
 import java.util.List;
 
-@RestController
+@org.springframework.stereotype.Controller
 public class Controller {
-    private final ClienteRepJpa clientesJpa;
+    private final ClienteRepJpa clienteRepJpa;
     private final AplicativoRepJpa aplicativoRepJpa;
     private final AssinaturaRepJpa assinaturaRepJpa;
     private final UsuarioRepJpa usuarioRepJpa;
     private final PagamentoRepJpa pagamentoRepJpa;
 
-    @Autowired
-    public Controller(ClienteRepJpa clientesJpa,
+    public Controller(ClienteRepJpa clienteRepJpa,
                       AplicativoRepJpa aplicativoRepJpa,
                       AssinaturaRepJpa assinaturaRepJpa,
                       UsuarioRepJpa usuarioRepJpa,
                       PagamentoRepJpa pagamentoRepJpa) {
-        this.clientesJpa = clientesJpa;
+        this.clienteRepJpa = clienteRepJpa;
         this.aplicativoRepJpa = aplicativoRepJpa;
         this.assinaturaRepJpa = assinaturaRepJpa;
         this.usuarioRepJpa = usuarioRepJpa;
@@ -37,27 +38,27 @@ public class Controller {
         return "This is a test endpoint!";
     }
 
-    @GetMapping("/servcad/clientes")
+    @GetMapping("/clientes")
     public List<ClienteModel> todosClientes() {
-        return clientesJpa.todos();
+        return clienteRepJpa.todos();
     }
 
-    @GetMapping("/servcad/aplicativos")
+    @GetMapping("/aplicativos")
     public List<AplicativoModel> todosAplicativos() {
         return aplicativoRepJpa.todos();
     }
 
-    @GetMapping("/servcad/assinaturas")
-    public List<AssinaturaModel> todosAssinatura() {
+    @GetMapping("/assinaturas")
+    public List<AssinaturaModel> todasAssinaturas() {
         return assinaturaRepJpa.todosAssinatura();
     }
 
-    @GetMapping("/servcad/pagamentos")
+    @GetMapping("/pagamentos")
     public List<PagamentoModel> todosPagamentos() {
         return pagamentoRepJpa.todos();
     }
 
-    @GetMapping("/servcad/usuarios")
+    @GetMapping("/usuarios")
     public List<UsuarioModel> todosUsuarios() {
         return usuarioRepJpa.todos();
     }
