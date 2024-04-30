@@ -1,26 +1,22 @@
 package interfaceAdaptadora;
 
+import dominio.modelos.ClienteModel;
 import dominio.servicos.ClienteService;
+import persistencia.ClienteRepJpa;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
 
 @RestController
-@RequestMapping("/cliente")
-public record ClienteController(ClienteService clienteService) {
+@RequestMapping("/Get/servcad/clientes")
+public record ClienteController(ClienteService clienteService, ClienteRepJpa clienteRepJpa) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    @GetMapping("/todos")
+    public List<ClienteModel> todosClientes() {
+      return  clienteRepJpa.todos();
+    }
 
 
 

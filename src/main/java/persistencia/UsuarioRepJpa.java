@@ -3,7 +3,6 @@ package persistencia;
 import dominio.modelos.UsuarioModel;
 
 import dominio.persistencia.IUsuarioRepository;
-import interfaceAdaptadora.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 import persistencia.Entity.Usuario;
@@ -18,7 +17,6 @@ import java.util.List;
 public class UsuarioRepJpa implements IUsuarioRepository {
     private UsuarioJpa_itfRep usuarioRepository;
 
-    @Autowired
     public UsuarioRepJpa(UsuarioJpa_itfRep usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }

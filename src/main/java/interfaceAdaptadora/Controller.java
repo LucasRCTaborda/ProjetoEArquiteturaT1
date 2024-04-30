@@ -14,7 +14,6 @@ public class Controller {
     private PagamentoModel pagamento;
 
 
-    @Autowired
     public Controller(UsuarioModel usuario,
                       AplicativoModel aplicativo,
                       AssinaturaModel assinatura,
