@@ -106,4 +106,49 @@ VALUES (12, 3, 2, '2024-10-15', '2024-11-15');
 INSERT INTO Assinatura (codigo, id_aplicativo, id_cliente, inicioVigencia, fimVigencia)
 VALUES (14, 4, 4, '2024-11-15', '2024-12-15');
 
+CREATE TABLE Pagamentos (
+                            codigo BIGINT PRIMARY KEY NOT NULL,
+                            id_assinatura BIGINT NOT NULL,
+                            valorPago double,
+                            promocao varchar
+);
+-- Pagamento 1
+INSERT INTO Pagamentos (codigo, id_assinatura, valorPago, promocao)
+VALUES (1, 3, 50.00, 'Promoção 1');
+
+-- Pagamento 2
+INSERT INTO Pagamentos (codigo, id_assinatura, valorPago, promocao)
+VALUES (2, 4, 60.00, 'Promoção 2');
+
+-- Pagamento 3
+INSERT INTO Pagamentos (codigo, id_assinatura, valorPago, promocao)
+VALUES (3, 5, 70.00, 'Promoção 3');
+
+-- Pagamento 4
+INSERT INTO Pagamentos (codigo, id_assinatura, valorPago, promocao)
+VALUES (4, 6, 80.00, 'Promoção 4');
+
+-- Pagamento 5
+INSERT INTO Pagamentos (codigo, id_assinatura, valorPago, promocao)
+VALUES (5, 7, 90.00, 'Promoção 5');
+
+-- Pagamento 6
+INSERT INTO Pagamentos (codigo, id_assinatura, valorPago, promocao)
+VALUES (6, 8, 100.00, 'Promoção 6');
+
+-- Pagamento 7
+INSERT INTO Pagamentos (codigo, id_assinatura, valorPago, promocao)
+VALUES (7, 9, 110.00, 'Promoção 7');
+
+-- Pagamento 8
+INSERT INTO Pagamentos (codigo, id_assinatura, valorPago, promocao)
+VALUES (8, 10, 120.00, 'Promoção 8');
+
+-- Pagamento 9
+INSERT INTO Pagamentos (codigo, id_assinatura, valorPago, promocao)
+VALUES (9, 11, 130.00, 'Promoção 9');
+
+-- Pagamento 10
+INSERT INTO Pagamentos (codigo, id_assinatura, valorPago, promocao)
+VALUES (10, 12, 140.00, 'Promoção 10');
 

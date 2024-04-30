@@ -1,28 +1,29 @@
 package persistencia.Entity;
 
+import dominio.modelos.PagamentoModel;
 import jakarta.persistence.*;
-import persistencia.Entity.Assinatura;
 
 @Entity
 public class Pagamento {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Assuming you want it to be auto-generated
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long codigo;
+
     @ManyToOne(cascade = CascadeType.REFRESH)
     private Assinatura assinatura;
+
     private double valorPago;
     private String promocao;
+
+    public Pagamento() {
+    }
 
     public Pagamento(long codigo, Assinatura assinatura, double valorPago, String promocao) {
         this.codigo = codigo;
         this.assinatura = assinatura;
         this.valorPago = valorPago;
         this.promocao = promocao;
-    }
-
-    public Pagamento() {
-
     }
 
     public long getCodigo() {
@@ -33,20 +34,20 @@ public class Pagamento {
         return assinatura;
     }
 
-    public double getValorPago() {
-        return valorPago;
-    }
-
-    public String getPromocao() {
-        return promocao;
-    }
-
     public void setAssinatura(Assinatura assinatura) {
         this.assinatura = assinatura;
     }
 
+    public double getValorPago() {
+        return valorPago;
+    }
+
     public void setValorPago(double valorPago) {
         this.valorPago = valorPago;
+    }
+
+    public String getPromocao() {
+        return promocao;
     }
 
     public void setPromocao(String promocao) {
@@ -61,5 +62,14 @@ public class Pagamento {
                 ", valorPago=" + valorPago +
                 ", promocao='" + promocao + '\'' +
                 '}';
+    }
+
+    public static Pagamento fromPagamentoModel(PagamentoModel pModel) {
+        Assinatura assinatura = new Assinatura(); // Aqui você deve buscar a Assinatura correspondente ao modelo
+        return new Pagamento(pModel.getCodigo(), assinatura, pModel.getValorPago(), pModel.getPromocao());
+    }
+
+    public static PagamentoModel toPagamentoModel(Pagamento pagamento) {
+        return new PagamentoModel(pagamento.getCodigo(), pagamento.getAssinatura(), pagamento.getValorPago(), pagamento.getPromocao());
     }
 }
