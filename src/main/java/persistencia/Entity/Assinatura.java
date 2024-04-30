@@ -4,8 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import persistencia.Entity.Aplicativo;
-import persistencia.Entity.Cliente;
+
 
 
 import java.util.Date;
@@ -16,7 +15,6 @@ public class Assinatura {
     @Id
     @GeneratedValue
     private long codigo;
-
     @ManyToOne
     private Aplicativo aplicativo;
 

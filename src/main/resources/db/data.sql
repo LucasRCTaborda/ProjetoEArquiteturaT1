@@ -54,3 +54,56 @@ INSERT INTO Aplicativos (codigo, nome, custoMensal) VALUES
                                                         (13, 'Empresa XIPTV', FLOOR(RAND() * (500 - 10 + 1)) + 10),
                                                         (14, 'Empresa XINSS', 1000);
 
+
+CREATE TABLE Assinatura (
+                            codigo BIGINT PRIMARY KEY NOT NULL,
+                            id_aplicativo BIGINT NOT NULL,
+                            id_cliente BIGINT NOT NULL,
+                            inicioVigencia DATE,
+                            fimVigencia DATE
+);
+
+-- Exemplo 1:
+INSERT INTO Assinatura (codigo, id_aplicativo, id_cliente, inicioVigencia, fimVigencia)
+VALUES (3, 1,2,'2024-06-01', '2024-07-01');
+
+-- Exemplo 2:
+INSERT INTO Assinatura (codigo, id_aplicativo, id_cliente, inicioVigencia, fimVigencia)
+VALUES (4, 3,2,'2024-06-15', '2024-07-15');
+
+-- Exemplo 3:
+INSERT INTO Assinatura (codigo, id_aplicativo, id_cliente, inicioVigencia, fimVigencia)
+VALUES (5, 7,6, '2024-07-01', '2024-08-01');
+-- Exemplo 4:
+INSERT INTO Assinatura (codigo, id_aplicativo, id_cliente, inicioVigencia, fimVigencia)
+VALUES (6, 7,4, '2024-07-15', '2024-08-15');
+
+-- Exemplo 5:
+INSERT INTO Assinatura (codigo, id_aplicativo, id_cliente, inicioVigencia, fimVigencia)
+VALUES (7,6, 1, '2024-08-01', '2024-09-01');
+
+-- Exemplo 6:
+INSERT INTO Assinatura (codigo, id_aplicativo, id_cliente, inicioVigencia, fimVigencia)
+VALUES (8, 3, 9, '2024-08-15', '2024-09-15');
+
+-- Exemplo 7:
+INSERT INTO Assinatura (codigo, id_aplicativo, id_cliente, inicioVigencia, fimVigencia)
+VALUES (9, 9, 3, '2024-09-01', '2024-10-01');
+
+-- Exemplo 8:
+INSERT INTO Assinatura (codigo, id_aplicativo, id_cliente, inicioVigencia, fimVigencia)
+VALUES (10, 7,6, '2024-09-15', '2024-10-15');
+
+-- Exemplo 9:
+INSERT INTO Assinatura (codigo, id_aplicativo, id_cliente, inicioVigencia, fimVigencia)
+VALUES (11, 6, 5, '2024-10-01', '2024-11-01');
+
+-- Exemplo 10:
+INSERT INTO Assinatura (codigo, id_aplicativo, id_cliente, inicioVigencia, fimVigencia)
+VALUES (12, 3, 2, '2024-10-15', '2024-11-15');
+
+-- Exemplo 11:
+INSERT INTO Assinatura (codigo, id_aplicativo, id_cliente, inicioVigencia, fimVigencia)
+VALUES (14, 4, 4, '2024-11-15', '2024-12-15');
+
+

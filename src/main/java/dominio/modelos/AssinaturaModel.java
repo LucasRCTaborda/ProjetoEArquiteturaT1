@@ -12,7 +12,6 @@ public class AssinaturaModel {
     @Id
     @GeneratedValue
     private long codigo;
-
     private Date inicioVigencia;
     private Date fimVigencia;
     private List<ClienteModel> cliente;
@@ -28,7 +27,7 @@ public class AssinaturaModel {
     }
 
 
-    public AssinaturaModel(long codigo) {
+    public AssinaturaModel(long codigo, String nome, String s, Date inicioVigencia, Date fimVigencia) {
         this.codigo = codigo;
       this.aplicativo = new LinkedList<>();
         this.cliente = new LinkedList<>();

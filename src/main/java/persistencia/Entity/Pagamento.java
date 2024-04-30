@@ -1,16 +1,15 @@
 package persistencia.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-@Entity
+import jakarta.persistence.*;
+import persistencia.Entity.Assinatura;
 
+@Entity
 public class Pagamento {
 
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Assuming you want it to be auto-generated
     private long codigo;
+    @ManyToOne(cascade = CascadeType.REFRESH)
     private Assinatura assinatura;
     private double valorPago;
     private String promocao;
@@ -23,34 +22,44 @@ public class Pagamento {
     }
 
     public Pagamento() {
+
     }
 
     public long getCodigo() {
         return codigo;
     }
 
-
     public Assinatura getAssinatura() {
         return assinatura;
-    }
-
-    public void setAssinatura(Assinatura assinatura) {
-        this.assinatura = assinatura;
     }
 
     public double getValorPago() {
         return valorPago;
     }
 
-    public void setValorPago(double valorPago) {
-        this.valorPago = valorPago;
-    }
-
     public String getPromocao() {
         return promocao;
     }
 
+    public void setAssinatura(Assinatura assinatura) {
+        this.assinatura = assinatura;
+    }
+
+    public void setValorPago(double valorPago) {
+        this.valorPago = valorPago;
+    }
+
     public void setPromocao(String promocao) {
         this.promocao = promocao;
+    }
+
+    @Override
+    public String toString() {
+        return "Pagamento{" +
+                "codigo=" + codigo +
+                ", assinatura=" + assinatura +
+                ", valorPago=" + valorPago +
+                ", promocao='" + promocao + '\'' +
+                '}';
     }
 }

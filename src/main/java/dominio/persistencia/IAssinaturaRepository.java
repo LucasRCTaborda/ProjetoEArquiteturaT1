@@ -7,10 +7,9 @@ import dominio.modelos.ClienteModel;
 import java.util.List;
 
 public interface IAssinaturaRepository  {
-    List<AssinaturaModel> todos ();
+    List<AssinaturaModel> todosAssinatura ();
     List<AplicativoModel> todosAplicativos();
     List<ClienteModel> todosClientes();
-
 
     AssinaturaModel consultaPorId(Long codigo);
     AssinaturaModel ConsultaporIdAssinatura(long codigo);

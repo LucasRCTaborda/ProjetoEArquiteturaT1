@@ -36,17 +36,13 @@ public class ClienteRepJpa implements IClienteRepository {
 
     @Override
     public ClienteModel consultaPorId(Long codigo) {
-        // Buscar o cliente pelo ID
         Optional<Cliente> optionalCliente = clienteRepository.findById(codigo);
 
-        // Verificar se o cliente foi encontrado
         if (optionalCliente.isPresent()) {
-            // Cliente encontrado, retornar o modelo de cliente correspondente
             Cliente cliente = optionalCliente.get();
             System.out.println("Cliente de código: " + codigo + ": " + cliente);
             return Cliente.toClienteModel(cliente);
         } else {
-            // Cliente não encontrado, retornar null
             return null;
         }
     }
