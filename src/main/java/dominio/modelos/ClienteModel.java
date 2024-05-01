@@ -42,7 +42,9 @@ public class ClienteModel {
     public void setEmail(String email) {
         Email = email;
     }
+
     private final ClienteRepJpa clienteRepJpa = null;
+
     public ClienteModel encontrCliente(long codigoCliente) {
         ClienteModel modelCliente = null;
 

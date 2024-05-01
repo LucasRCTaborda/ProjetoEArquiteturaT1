@@ -11,7 +11,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-
 @Repository
 public class AplicativoRepJpa implements IAplicativoRepository {
     private final AplicativoJpa_itfRep aplicativoRepository;
@@ -36,7 +35,7 @@ public class AplicativoRepJpa implements IAplicativoRepository {
     @Override
     public AplicativoModel consultaPorId(long id) {
         Aplicativo aplicativo = aplicativoRepository.findById(id);
-        System.out.println("Produto de codigo: "+id+": "+aplicativo);
+        System.out.println("Produto de codigo: " + id + ": " + aplicativo);
         if (aplicativo == null) {
             return null;
         } else {
@@ -55,7 +54,8 @@ public class AplicativoRepJpa implements IAplicativoRepository {
 
             }
 
-        }return umEx;
+        }
+        return umEx;
     }
 }
 

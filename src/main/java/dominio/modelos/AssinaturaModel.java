@@ -43,8 +43,6 @@ public class AssinaturaModel {
     }
 
 
-
-
     public AssinaturaModel() {
     }
 
@@ -92,35 +90,35 @@ public class AssinaturaModel {
         this.statusATIVO = statusATIVO;
     }
 
-        public AssinaturaModel criarAssinaturaComClienteEAplicativo(ClienteModel cliente, AplicativoModel aplicativo) {
+    public AssinaturaModel criarAssinaturaComClienteEAplicativo(ClienteModel cliente, AplicativoModel aplicativo) {
 
-            AssinaturaModel assinatura = new AssinaturaModel();
-
-
-            assinatura.setClientes(cliente);
-            assinatura.setAplicativos(aplicativo);
+        AssinaturaModel assinatura = new AssinaturaModel();
 
 
-            Date inicio = new Date();
-            Date fim = adicionarDias(inicio, 30);
-            assinatura.setInicioVigencia(inicio);
-            assinatura.setFimVigencia(fim);
-            assinatura.verificarStatusValido();
+        assinatura.setClientes(cliente);
+        assinatura.setAplicativos(aplicativo);
 
 
-            return assinatura;
-        }
-
-        // Método para adicionar dias a uma data
-        private Date adicionarDias(Date data, int dias) {
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(data);
-            calendar.add(Calendar.DAY_OF_MONTH, dias);
-            return calendar.getTime();
-        }
+        Date inicio = new Date();
+        Date fim = adicionarDias(inicio, 30);
+        assinatura.setInicioVigencia(inicio);
+        assinatura.setFimVigencia(fim);
+        assinatura.verificarStatusValido();
 
 
-    public Date inicioDate(){
+        return assinatura;
+    }
+
+    // Método para adicionar dias a uma data
+    private Date adicionarDias(Date data, int dias) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(data);
+        calendar.add(Calendar.DAY_OF_MONTH, dias);
+        return calendar.getTime();
+    }
+
+
+    public Date inicioDate() {
         LocalDate dataAtual = LocalDate.now();
         Date date = java.sql.Date.valueOf(dataAtual);
         return date;
@@ -134,27 +132,26 @@ public class AssinaturaModel {
         calendar.setTime(umDate);
         calendar.add(Calendar.DAY_OF_MONTH, 30);
         return calendar.getTime();
-}
+    }
 
 
+    private final AssinaturaRepJpa assinaturaRepJpa = null;
 
-        private final AssinaturaRepJpa assinaturaRepJpa = null;
+    public AplicativoModel encontraAplicativo(long codigoAplicativo) {
+        AplicativoModel modelAplicativo = null;
 
-        public AplicativoModel encontraAplicativo(long codigoAplicativo) {
-            AplicativoModel modelAplicativo = null;
+        List<AplicativoModel> todosAplicativos = assinaturaRepJpa.todosAplicativos();
+        for (AplicativoModel umAplicativo : todosAplicativos) {
+            long codx = umAplicativo.getCodigo();
 
-            List<AplicativoModel> todosAplicativos = assinaturaRepJpa.todosAplicativos();
-            for (AplicativoModel umAplicativo : todosAplicativos) {
-                long codx = umAplicativo.getCodigo();
-
-                if (codx == codigoAplicativo) {
-                    modelAplicativo = umAplicativo;
-                    break;
-                }
+            if (codx == codigoAplicativo) {
+                modelAplicativo = umAplicativo;
+                break;
             }
-
-            return modelAplicativo;
         }
+
+        return modelAplicativo;
+    }
 
     private final ClienteRepJpa clienteRepJpa = null;
 
@@ -184,7 +181,6 @@ public class AssinaturaModel {
             return StatusATIVO.CANCELADO;
         }
     }
-
 
 
 }
