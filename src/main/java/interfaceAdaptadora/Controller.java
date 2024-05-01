@@ -4,25 +4,23 @@ import dominio.modelos.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import persistencia.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/")
 public class Controller {
     @Autowired
-    private final ClienteRepJpa clienteRepJpa;
+    private ClienteRepJpa clienteRepJpa;
     @Autowired
-    private final AplicativoRepJpa aplicativoRepJpa;
+    private AplicativoRepJpa aplicativoRepJpa;
     @Autowired
-    private final AssinaturaRepJpa assinaturaRepJpa;
+    private AssinaturaRepJpa assinaturaRepJpa;
     @Autowired
-    private final UsuarioRepJpa usuarioRepJpa;
+    private UsuarioRepJpa usuarioRepJpa;
     @Autowired
-    private final PagamentoRepJpa pagamentoRepJpa;
+    private PagamentoRepJpa pagamentoRepJpa;
 
     public Controller(ClienteRepJpa clienteRepJpa,
                       AplicativoRepJpa aplicativoRepJpa,
@@ -36,10 +34,10 @@ public class Controller {
         this.pagamentoRepJpa = pagamentoRepJpa;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     @CrossOrigin(origins = "*")
-    public String welcomeMessage() {
-        return "Bem-vindo às lojas ACME";
+    public String welcomeMessage(){
+        return "Bem vindo as lojas ACME";
     }
 
     @GetMapping("/test")
@@ -70,5 +68,10 @@ public class Controller {
     @GetMapping("/usuarios")
     public List<UsuarioModel> todosUsuarios() {
         return usuarioRepJpa.todos();
+    }
+
+    @GetMapping("/controller")
+    public String controllerEndpoint() {
+        return "Este é o endpoint do Controller!";
     }
 }
