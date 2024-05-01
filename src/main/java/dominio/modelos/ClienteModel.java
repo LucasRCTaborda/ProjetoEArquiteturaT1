@@ -1,7 +1,8 @@
 package dominio.modelos;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 public class ClienteModel {
 

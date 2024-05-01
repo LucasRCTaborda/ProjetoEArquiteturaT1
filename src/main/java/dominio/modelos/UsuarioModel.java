@@ -1,8 +1,5 @@
 package dominio.modelos;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 
 public class UsuarioModel {
     private long codigo;

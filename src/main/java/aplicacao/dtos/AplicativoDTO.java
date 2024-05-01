@@ -1,8 +1,10 @@
 package aplicacao.dtos;
 
 import dominio.modelos.AplicativoModel;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 
 public class AplicativoDTO {
     @Id
