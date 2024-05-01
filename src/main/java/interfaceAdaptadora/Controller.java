@@ -1,6 +1,7 @@
 package interfaceAdaptadora;
 
 import dominio.modelos.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import persistencia.*;
@@ -9,10 +10,15 @@ import java.util.List;
 
 @org.springframework.stereotype.Controller
 public class Controller {
+    @Autowired
     private final ClienteRepJpa clienteRepJpa;
+    @Autowired
     private final AplicativoRepJpa aplicativoRepJpa;
+    @Autowired
     private final AssinaturaRepJpa assinaturaRepJpa;
+    @Autowired
     private final UsuarioRepJpa usuarioRepJpa;
+    @Autowired
     private final PagamentoRepJpa pagamentoRepJpa;
 
     public Controller(ClienteRepJpa clienteRepJpa,
