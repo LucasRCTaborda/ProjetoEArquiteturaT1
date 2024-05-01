@@ -1,10 +1,12 @@
 package dominio.modelos;
 
 
+import persistencia.ClienteRepJpa;
 import persistencia.Entity.Cliente;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.List;
 
 public class ClienteModel {
 
@@ -39,6 +41,22 @@ public class ClienteModel {
 
     public void setEmail(String email) {
         Email = email;
+    }
+    private final ClienteRepJpa clienteRepJpa = null;
+    public ClienteModel encontrCliente(long codigoCliente) {
+        ClienteModel modelCliente = null;
+
+        List<ClienteModel> todosClientes = clienteRepJpa.todos();
+        for (ClienteModel umcliente : todosClientes) {
+            long codx = umcliente.getcodigo();
+
+            if (codx == codigoCliente) {
+                modelCliente = umcliente;
+                break;
+            }
+        }
+
+        return modelCliente;
     }
 
     @Override

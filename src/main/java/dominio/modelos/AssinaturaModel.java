@@ -174,12 +174,6 @@ public class AssinaturaModel {
         return modelCliente;
     }
 
-
-
-
-
-
-
     public StatusATIVO verificarStatusValido() {
         Date inicio = inicioDate();
         Date fim = fimdate();

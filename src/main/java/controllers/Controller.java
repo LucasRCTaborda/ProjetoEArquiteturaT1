@@ -2,9 +2,7 @@ package controllers;
 
 import dominio.modelos.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import persistencia.*;
 
 import java.util.List;
@@ -40,31 +38,77 @@ public class Controller {
     public List<ClienteModel> todosClientes() {
         return clienteRepJpa.todos();
     }
-
+    //----------------------------------------------------------------------------------------------------------------------
     //Lista com todos os clientes Aplicativos
     @GetMapping("/aplicativos")
     public List<AplicativoModel> todosAplicativos() {
         return aplicativoRepJpa.todos();
     }
 
-
-  /*  //POST / servcad/assinatura
-    @GetMapping("/assinaturas/{codigodocliente}/{codigodoaplicativo}")
-    public AssinaturaModel CriaAssinatura() {
-        AssinaturaModel assinaturaModel = new AssinaturaModel();
-
-
-    }*/
-
+    //----------------------------------------------------------------------------------------------------------------------
     @GetMapping("/pagamentos")
     public List<PagamentoModel> todosPagamentos() {
         return pagamentoRepJpa.todos();
     }
-
+    //----------------------------------------------------------------------------------------------------------------------
     @GetMapping("/usuarios")
     public List<UsuarioModel> todosUsuarios() {
         return usuarioRepJpa.todos();
     }
+//----------------------------------------------------------------------------------------------------------------------
+    @PostMapping("/assinaturas/{codigodocliente}/{codigodoaplicativo}")
+    public AssinaturaModel criaAssinatura(@PathVariable long codigodocliente, @PathVariable long codigodoaplicativo) {
+        ClienteModel modelCliente = null;
+        AplicativoModel modelAplicativo = null;
+
+
+        List<ClienteModel> todosClientes = clienteRepJpa.todos();
+        for (ClienteModel umcliente : todosClientes) {
+            if (umcliente.getcodigo() == codigodocliente) {
+                modelCliente = umcliente;
+                break;
+            }
+        }
+
+
+        List<AplicativoModel> todosApp = todosAplicativos();
+        for (AplicativoModel umapp : todosApp) {
+            if (umapp.getCodigo() == codigodoaplicativo) {
+                modelAplicativo = umapp;
+                break;
+            }
+        }
+
+        AssinaturaModel assinaturaModel = new AssinaturaModel();
+        if (modelCliente != null && modelAplicativo != null) {
+            assinaturaModel = assinaturaModel.criarAssinaturaComClienteEAplicativo(modelCliente, modelAplicativo);
+        } else {
+
+        }
+
+        return assinaturaModel;
+    }
+//----------------------------------------------------------------------------------------------------------------------
+
+    @PostMapping("/Aplicativo/atualizacaocusto/{codigodocliente}/{codigodoaplicativo}")
+    public AplicativoModel AtualizaCusto(@PathVariable long codigodocliente, @PathVariable long custo) {
+
+        AplicativoModel modelAplicativo = null;
+        AplicativoModel um = null;
+        List<AplicativoModel> todosApp = todosAplicativos();
+        for (AplicativoModel umapp : todosApp) {
+            if (umapp.getCodigo() == codigodocliente) {
+                modelAplicativo = umapp;
+                break;
+            }
+             um =modelAplicativo;
+
+            modelAplicativo.setCustoMensal(custo);
+
+        }
+
+        return um;
+        }
 
 
 
@@ -83,18 +127,22 @@ public class Controller {
 
 
 
+
+
+
+//----------------------------------------------------------------------------------------------------------------------
 
     @GetMapping("/controller")
     public String controllerEndpoint() {
         return "Este é o endpoint do Controller!";
     }
-
+    //----------------------------------------------------------------------------------------------------------------------
     @GetMapping("")
     @CrossOrigin(origins = "*")
     public String welcomeMessage(){
         return "Bem vindo as lojas ACME";
     }
-
+    //----------------------------------------------------------------------------------------------------------------------
     @GetMapping("/test")
     public String testEndpoint() {
         return "This is a test endpoint!";

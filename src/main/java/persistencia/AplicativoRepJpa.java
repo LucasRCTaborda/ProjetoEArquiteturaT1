@@ -43,7 +43,21 @@ public class AplicativoRepJpa implements IAplicativoRepository {
             return Aplicativo.toAplicativoModel(aplicativo);
         }
     }
+
+    @Override
+    public AplicativoModel AtualizaCusto(long id, double valor) {
+        List<AplicativoModel> todosApp = todos();
+        AplicativoModel umEx = null;
+        for (AplicativoModel umapp : todosApp) {
+            if (umapp.getCodigo() == id) {
+                umapp.setCustoMensal(valor);
+                umEx = umapp;
+
+            }
+
+        }return umEx;
     }
+}
 
 
 
