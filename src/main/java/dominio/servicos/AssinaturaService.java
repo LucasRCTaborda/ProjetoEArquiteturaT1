@@ -1,11 +1,11 @@
 package dominio.servicos;
 
+import dominio.modelos.AssinaturaModel;
+import dominio.modelos.ClienteModel;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AssinaturaService {
-
-
 
 
 

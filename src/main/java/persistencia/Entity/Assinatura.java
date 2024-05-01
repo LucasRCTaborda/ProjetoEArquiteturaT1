@@ -4,6 +4,8 @@ package persistencia.Entity;
 
 
 
+import dominio.modelos.StatusATIVO;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,15 +18,30 @@ public class Assinatura {
     @Id
     @GeneratedValue
     private long codigo;
+
+    private Date inicioVigencia;
+
+    private Date fimVigencia;
     @ManyToOne
     private Aplicativo aplicativo;
 
     @ManyToOne
     private Cliente cliente;
 
-    private Date inicioVigencia;
+    private StatusATIVO statusATIVO;
 
-    private Date fimVigencia;
+    public StatusATIVO getStatusATIVO() {
+        return statusATIVO;
+    }
+
+    public Assinatura(long codigo, long id_aplicativo, long id_cliente, Date inicioVigencia, Date fimVigencia, StatusATIVO statusATIVO) {
+        this.codigo = codigo;
+        this.inicioVigencia = inicioVigencia;
+        this.fimVigencia = fimVigencia;
+        this.aplicativo = aplicativo;
+        this.cliente = cliente;
+        this.statusATIVO = statusATIVO;
+    }
 
     // Getters e Setters
     public long getCodigo() {

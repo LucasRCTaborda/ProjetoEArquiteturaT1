@@ -1,4 +1,4 @@
-package interfaceAdaptadora;
+package controllers;
 
 import dominio.modelos.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,31 +34,27 @@ public class Controller {
         this.pagamentoRepJpa = pagamentoRepJpa;
     }
 
-    @GetMapping("")
-    @CrossOrigin(origins = "*")
-    public String welcomeMessage(){
-        return "Bem vindo as lojas ACME";
-    }
 
-    @GetMapping("/test")
-    public String testEndpoint() {
-        return "This is a test endpoint!";
-    }
-
+    //Lista com todos os clientes cadastrados
     @GetMapping("/clientes")
     public List<ClienteModel> todosClientes() {
         return clienteRepJpa.todos();
     }
 
+    //Lista com todos os clientes Aplicativos
     @GetMapping("/aplicativos")
     public List<AplicativoModel> todosAplicativos() {
         return aplicativoRepJpa.todos();
     }
 
-    @GetMapping("/assinaturas")
-    public List<AssinaturaModel> todasAssinaturas() {
-        return assinaturaRepJpa.todosAssinatura();
-    }
+
+  /*  //POST / servcad/assinatura
+    @GetMapping("/assinaturas/{codigodocliente}/{codigodoaplicativo}")
+    public AssinaturaModel CriaAssinatura() {
+        AssinaturaModel assinaturaModel = new AssinaturaModel();
+
+
+    }*/
 
     @GetMapping("/pagamentos")
     public List<PagamentoModel> todosPagamentos() {
@@ -70,8 +66,37 @@ public class Controller {
         return usuarioRepJpa.todos();
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @GetMapping("/controller")
     public String controllerEndpoint() {
         return "Este é o endpoint do Controller!";
+    }
+
+    @GetMapping("")
+    @CrossOrigin(origins = "*")
+    public String welcomeMessage(){
+        return "Bem vindo as lojas ACME";
+    }
+
+    @GetMapping("/test")
+    public String testEndpoint() {
+        return "This is a test endpoint!";
     }
 }

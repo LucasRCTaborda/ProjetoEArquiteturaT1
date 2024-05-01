@@ -1,6 +1,8 @@
 package dominio.modelos;
 
 
+import persistencia.Entity.Cliente;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -47,4 +49,6 @@ public class ClienteModel {
                 ", Email='" + Email + '\'' +
                 '}';
     }
+
+
 }

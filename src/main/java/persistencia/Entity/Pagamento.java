@@ -66,7 +66,7 @@ public class Pagamento {
     }
 
     public static Pagamento fromPagamentoModel(PagamentoModel pModel) {
-        Assinatura assinatura = new Assinatura(); // Aqui você deve buscar a Assinatura correspondente ao modelo
+        Assinatura assinatura = null;
         return new Pagamento(pModel.getCodigo(), assinatura, pModel.getValorPago(), pModel.getPromocao());
     }
 
