@@ -3,11 +3,14 @@ package interfaceAdaptadora;
 import dominio.modelos.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import persistencia.*;
 
 import java.util.List;
 
-@org.springframework.stereotype.Controller
+@RequestMapping(value = "/home")
+@RestController
 public class Controller {
     private final ClienteRepJpa clienteRepJpa;
     private final AplicativoRepJpa aplicativoRepJpa;
